@@ -1,0 +1,153 @@
+﻿@{
+    ViewBag.Title = "Project 1";
+    List<string> resultTower = new List<string>();
+    long? Exponent = null;
+    long? result = null;
+    if (ViewBag.resultTower != null)
+    {
+        resultTower = (List<string>)ViewBag.resultTower;
+    }
+    if (ViewBag.Exponent != null)
+    {
+        Exponent = (long)ViewBag.Exponent;
+    }
+    if (ViewBag.Result != null)
+    {
+        result = (long)ViewBag.Result;
+    }
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                @if (TempData["ErrorMessage"] != null && !string.IsNullOrEmpty((string)TempData["ErrorMessage"]))
+                {
+
+                    <div class="alert alert-danger " role="alert">
+                        <strong>Error!</strong> @TempData["ErrorMessage"]
+                        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                }
+                <div class="form-horizontal">
+                    <div class="justify-content-between">
+                        <h4 class="title pd-b-2">
+                            Project 1
+                        </h4>
+                    </div>
+                    <div>
+                        <div class="flex-1 mg-b-20 bd bd-2 bd-gray-200 rounded p-3 pd-b-0-f row mt-3">
+                            @using (Html.BeginForm("TowerOfHanoi", "Project1", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+
+                                @Html.AntiForgeryToken()
+                                <h6 class="title pd-b-2">
+                                    Tower of hanoi
+                                </h6>
+                                <div class="form-group row">
+                                    <label class="control-label">Enter the number:</label>
+                                    <input type="text" name="Numdiscs" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Enter" class="btn btn-success" />
+                                    </div>
+
+                                </div>
+
+                            }
+                            <table class="table card-table  table-vcenter text-nowrap mb-0">
+                                <tbody>
+                                    @foreach (var item in resultTower)
+                                    {
+                                        <tr>
+                                            <td>@item</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex-1 mg-b-20 bd bd-2 bd-gray-200 rounded p-3 pd-b-0-f row mt-3">
+                            @if (Exponent != null)
+                            {
+                                <div class="alert alert-success" role="alert">
+                                    <strong>Success!</strong> @Exponent
+                                    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            }
+                            @using (Html.BeginForm("Exponent", "Project1", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+
+                                @Html.AntiForgeryToken()
+                                <h6 class="title pd-b-2">
+                                    Exponent
+                                </h6>
+                                <div class="form-group row">
+                                    <label class="control-label">Enter the number:</label>
+                                    <input type="text" name="Number" class="form-control" />
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label">Enter the exponent:</label>
+                                    <input type="text" name="Exponent" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Enter" class="btn btn-success" />
+                                    </div>
+
+                                </div>
+
+                            }
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex-1 mg-b-20 bd bd-2 bd-gray-200 rounded p-3 pd-b-0-f row mt-3">
+                            @if (result != null)
+                            {
+                                <div class="alert alert-success" role="alert">
+                                    <strong>Success!</strong> @result
+                                    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            }
+                            @using (Html.BeginForm("CombinationFunction", "Project1", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+
+                                @Html.AntiForgeryToken()
+                                <h6 class="title pd-b-2">
+                                    Combination function
+                                </h6>
+                                <div class="form-group row">
+                                    <label class="control-label">Enter the first number:</label>
+                                    <input type="text" name="FirstNumber" class="form-control" />
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label">Enter the second number:</label>
+                                    <input type="text" name="SecondNumber" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Enter" class="btn btn-success" />
+                                    </div>
+
+                                </div>
+
+                            }
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

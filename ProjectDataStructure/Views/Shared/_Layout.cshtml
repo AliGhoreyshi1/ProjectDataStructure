@@ -1,0 +1,329 @@
+﻿<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Description" content="ShoppingHub">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="" />
+
+    <!-- Title -->
+    <title> @ViewBag.PageTitle </title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="~/img/brand/favicon.png" type="image/x-icon" />
+
+    <!-- Icons css -->
+    <link href="~/css/icons.css" rel="stylesheet">
+
+    <!-- Bootstrap css -->
+    <link href="~/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--  Right-sidemenu css -->
+    <link href="/plugins/sidebar/sidebar.css" rel="stylesheet">
+
+    <!--  Sidemenu css -->
+    <link rel="stylesheet" href="/css/sidemenu.css">
+
+    <!-- style css -->
+    <link href="~/css/style.css" rel="stylesheet">
+    <!-- site css -->
+    <link href="~/css/site.css" rel="stylesheet">
+
+    <!--- Animations css-->
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet" />
+
+    @RenderSection("styleSection", required: false)
+
+    @* <!-- Icons css -->
+    <link href="/assets/css/icons.css" rel="stylesheet">
+
+    <!-- Bootstrap css -->
+    <link href="/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Internal Select2 css -->
+    <link href="/assets/plugins/select2/css/select2.min.css" rel="stylesheet">
+
+    <!--Internal  Datetimepicker-slider css -->
+    <link href="/assets/plugins/amazeui-datetimepicker/css/amazeui.datetimepicker.css" rel="stylesheet">
+    <link href="/assets/plugins/jquery-simple-datetimepicker/jquery.simple-dtpicker.css" rel="stylesheet">
+    <link href="/assets/plugins/pickerjs/picker.min.css" rel="stylesheet">
+
+    <!-- Internal Spectrum-colorpicker css -->
+    <link href="/assets/plugins/spectrum-colorpicker/spectrum.css" rel="stylesheet">
+
+
+    <!--  Right-sidemenu css -->
+    <link href="/assets/plugins/sidebar/sidebar.css" rel="stylesheet">
+
+    <!--Internal Notify -->
+    <link href="/assets/plugins/notify/css/notifIt.css" rel="stylesheet" />
+
+    <!--  Sidemenu css -->
+    <link rel="stylesheet" href="/assets/css/sidemenu.css">
+
+
+    <!--  Custom Scroll bar-->
+    <link href="/assets/plugins/mscrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+
+    <!--- Style css-->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/style-dark.css" rel="stylesheet">
+    <link href="/assets/css/boxed.css" rel="stylesheet">
+    <link href="/assets/css/dark-boxed.css" rel="stylesheet">
+
+    <!---Skinmodes css-->
+    <link href="/assets/css/skin-modes.css" rel="stylesheet" />
+
+    <!--- Animations css-->
+    <link href="/assets/css/animate.css" rel="stylesheet">
+    <link href="/assets/css/custom.css" rel="stylesheet" />
+
+    <link href="~/css/site.css" rel="stylesheet">*@
+    <!---charts--->
+
+</head>
+
+<body class="ltr main-body app sidebar-mini">
+
+    <!-- Loader -->
+    <div id="global-loader">
+        <img src="~/img/loading.gif" class="loader-img" alt="Loader">
+    </div>
+    <!-- /Loader -->
+    <!-- Page -->
+    <div class="page">
+        <div>
+            <!-- main-header -->
+            <div class="main-header side-header sticky nav nav-item">
+                <div class="container-fluid main-container ">
+                    <div class="main-header-left ">
+                        <div class="responsive-logo">
+                            <a href="index.html" class="header-logo">
+                                <img src="/img/brand/logo.png" class="logo-1" alt="logo">
+                                <img src="/img/brand/logo-white.png" class="dark-logo-1" alt="logo">
+                            </a>
+                        </div>
+                        <div class="app-sidebar__toggle" data-bs-toggle="sidebar">
+                            <a class="open-toggle" href="javascript:void(0);"><i class="header-icon fe fe-align-left"></i></a>
+                            <a class="close-toggle" href="javascript:void(0);"><i class="header-icons fe fe-x"></i></a>
+                        </div>
+                    </div>
+                    <div class="main-header-right">
+                        <button class="navbar-toggler navresponsive-toggler d-lg-none ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon fe fe-more-vertical "></span>
+                        </button>
+                        <div class="mb-0 navbar navbar-expand-lg navbar-nav-right responsive-navbar navbar-dark p-0">
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                                <ul class="nav nav-item  navbar-nav-right ms-auto">
+                                    <li class="">
+                                        <div class="dropdown  nav-item">
+                                            <a href="javascript:void(0);" class="d-flex  nav-item nav-link country-flag1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <span class="avatar country-Flag me-0 align-self-center bg-transparent"><img src="~/img/flags/us_flag.jpg" alt="img"></span>
+                                                <div class="my-auto">
+                                                    <strong class="me-2 ms-2 my-auto">English</strong>
+                                                </div>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-start  dropdown-menu-arrow" x-placement="bottom-end">
+                                                <a href="javascript:void(0);" class="dropdown-item d-flex ">
+                                                    <span class="avatar  me-3 align-self-center bg-transparent"><img src="~/img/flags/french_flag.jpg" alt="img"></span>
+                                                    <div class="d-flex">
+                                                        <span class="mt-2">French</span>
+                                                    </div>
+                                                </a>
+                                                <a href="javascript:void(0);" class="dropdown-item d-flex">
+                                                    <span class="avatar  me-3 align-self-center bg-transparent"><img src="~/img/flags/germany_flag.jpg" alt="img"></span>
+                                                    <div class="d-flex">
+                                                        <span class="mt-2">Germany</span>
+                                                    </div>
+                                                </a>
+                                                <a href="javascript:void(0);" class="dropdown-item d-flex">
+                                                    <span class="avatar me-3 align-self-center bg-transparent"><img src="~/img/flags/italy_flag.jpg" alt="img"></span>
+                                                    <div class="d-flex">
+                                                        <span class="mt-2">Italy</span>
+                                                    </div>
+                                                </a>
+                                                <a href="javascript:void(0);" class="dropdown-item d-flex">
+                                                    <span class="avatar me-3 align-self-center bg-transparent"><img src="~/img/flags/russia_flag.jpg" alt="img"></span>
+                                                    <div class="d-flex">
+                                                        <span class="mt-2">Russia</span>
+                                                    </div>
+                                                </a>
+                                                <a href="javascript:void(0);" class="dropdown-item d-flex">
+                                                    <span class="avatar  me-3 align-self-center bg-transparent"><img src="~/img/flags/spain_flag.jpg" alt="img"></span>
+                                                    <div class="d-flex">
+                                                        <span class="mt-2">spain</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="dropdown main-header-message right-toggle">
+                                        <a class="nav-link pe-0" data-bs-toggle="sidebar-right" data-bs-target=".sidebar-right">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /main-header -->
+            <!-- main-sidebar -->
+            <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
+            <aside class="app-sidebar sidebar-scroll">
+                <div class="main-sidebar-header active">
+                    <a class="desktop-logo logo-light active" href="/HomeAdmin"><img src="/img/brand/logo.png" class="main-logo" alt="logo"></a>
+                    <a class="desktop-logo logo-dark active" href="/HomeAdmin"><img src="/img/brand/logo-white.png" class="main-logo dark-theme" alt="logo"></a>
+                    <a class="logo-icon mobile-logo icon-light active" href="/HomeAdmin"><img src="/img/brand/favicon.png" class="logo-icon" alt="logo"></a>
+                    <a class="logo-icon mobile-logo icon-dark active" href="/HomeAdmin"><img src="/img/brand/favicon-white.png" class="logo-icon dark-theme" alt="logo"></a>
+                </div>
+                <div class="main-sidemenu">
+                    <div class="app-sidebar__user clearfix">
+                        <div class="dropdown user-pro-body">
+                            <div class="">
+                                <img alt="user-img" class="avatar avatar-xl brround" src="/img/faces/6.jpg"><span class="avatar-status profile-status bg-green"></span>
+                            </div>
+                            <div class="user-info">
+                                <h4 class="fw-semibold mt-3 mb-0">ALi Ghoreyshi</h4>
+
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                    <ul class="side-menu">
+
+
+                        <li class="side-item side-item-category">General</li>
+
+                        <li class="slide">
+                            <a class="side-menu__item" href="/"><i class="la la-home side-menu__icon1" href="@Url.Action("Index" , "Home" )"></i><span class="side-menu__label">Home</span></a>
+                        </li>
+
+
+
+                        <li class="slide">
+                            <a class="side-menu__item" data-bs-toggle="slide" href="#"><i class="las la-database side-menu__icon1"></i><span class="side-menu__label">All Project</span><i class="angle fe fe-chevron-down"></i></a>
+                            <ul class="slide-menu">
+
+                                <li><a class="slide-item" href="@Url.Action("Index" , "Project1" )">Project 1</a></li>
+                                <li><a class="slide-item" href="@Url.Action("Index" , "Project2" )">Project 2</a></li>
+                                <li><a class="slide-item" href="@Url.Action("Index" , "Project3" )">Project 3</a></li>
+                                <li><a class="slide-item" href="@Url.Action("Index" , "Project4" )">Project 4</a></li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                    </li>
+
+
+
+
+
+
+
+                    </ul>
+                </div>
+            </aside>
+            <!-- main-sidebar -->
+        </div>
+
+        <!-- main-content -->
+        <div class="main-content app-content">
+
+            <!-- container -->
+            <div class="main-container container-fluid">
+
+                <!-- breadcrumb -->
+                <div class="breadcrumb-header justify-content-between">
+                    <div class="my-auto">
+                        <div class="d-flex">
+                            <h4 class="content-title mb-0 my-auto">Pages</h4><span class="text-muted mt-1 tx-13 ms-2 mb-0">/ Settings</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- breadcrumb -->
+                @RenderBody()
+
+
+
+            </div>
+            <!-- Container closed -->
+        </div>
+        <!-- main-content closed -->
+        <!-- Footer opened -->
+        <div class="main-footer ht-45">
+            <div class="container-fluid pd-t-0 ht-100p">
+                <span> Copyright © 2022 <a href="javascript:void(0);" class="text-primary">Valex</a>. Designed with <span class="fa fa-heart text-danger"></span> by <a href="javascript:void(0);"> Spruko </a> All rights reserved.</span>
+            </div>
+        </div>
+        <!-- Footer closed -->
+
+    </div>
+    <!-- End Page -->
+    <!-- Back-to-top -->
+    <a href="#top" id="back-to-top"><i class="las la-angle-double-up"></i></a>
+
+
+    <!-- JQuery min js -->
+
+    <script src="~/js/jquery-3.6.0.min.js"></script>
+    <script src="~/js/jquery-1.11.2.min.js"></script>
+    <script src="~/js/jquery-ui.js"></script>
+
+
+
+    <!-- Bootstrap Bundle js -->
+    <script src="~/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="~/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Moment js -->
+    <script src="~/plugins/moment/moment.js"></script>
+
+    <!-- P-scroll js -->
+    <script src="~/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+    <!-- eva-icons js -->
+    <script src="~/js/eva-icons.min.js"></script>
+
+    <!-- Rating js-->
+    <script src="~/plugins/ratings-2/jquery.star-rating.js"></script>
+    <script src="~/plugins/ratings-2/star-rating.js"></script>
+
+    <!--themecolor js-->
+    <script src="~/js/themecolor.js"></script>
+
+    <!-- Sidebar js -->
+    <script src="~/plugins/side-menu/sidemenu.js"></script>
+
+
+    <!-- Right-sidebar js -->
+    <script src="~/plugins/sidebar/sidebar.js"></script>
+    <script src="~/plugins/sidebar/sidebar-custom.js"></script>
+
+    <!-- Ionicons js -->
+    <script src="/plugins/ionicons/ionicons.js"></script>
+
+    <!-- custom js -->
+    <script src="~/js/custom.js" asp-append-version="true"></script>
+    <!-- Internal form-elements js -->
+    <script src="~/js/form-elements.js"></script>
+
+    <!-- chart js -->
+
+
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    @RenderSection("scriptSession", required: false)
+</body>
+</html>

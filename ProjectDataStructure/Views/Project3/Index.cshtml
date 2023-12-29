@@ -1,0 +1,123 @@
+﻿@using static ProjectDataStructure.Models.Project3Service;
+@{
+    ViewBag.Title = "Project 1";
+    string queueArray = "";
+    string circularQueue = "";
+    QueueArray data1 = null;
+    CircularQueue data2 = null;
+    if (ViewBag.IdentityMatrix != null)
+    {
+        data1 = (QueueArray)ViewBag.IdentityMatrix;
+    }
+    if (ViewBag.IdentityMatrixx != null)
+    {
+        data2 = (CircularQueue)ViewBag.IdentityMatrixx;
+    }
+    if(ViewBag.queueArray != null)
+    {
+        queueArray = (string)ViewBag.queueArray;
+    }
+    if(ViewBag.circularQueue != null)
+    {
+        circularQueue = (string)ViewBag.circularQueue;
+    }
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                @if (TempData["ErrorMessage"] != null && !string.IsNullOrEmpty((string)TempData["ErrorMessage"]))
+                {
+
+                    <div class="alert alert-danger " role="alert">
+                        <strong>Error!</strong> @TempData["ErrorMessage"]
+                        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                }
+                <div class="form-horizontal">
+                    <div class="justify-content-between">
+                        <h4 class="title pd-b-2">
+                            Project 1
+                        </h4>
+                    </div>
+                    <div>
+                        <div class="flex-1 mg-b-20 bd bd-2 bd-gray-200 rounded p-3 pd-b-0-f row mt-3">
+                            @using (Html.BeginForm("TestQueueArray", "Project3", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+
+                                @Html.AntiForgeryToken()
+                                <h6 class="title pd-b-2">
+                                    Matrix
+                                </h6>
+                                <div class="form-group row">
+                                    <label class="control-label">Enter the text to see how to work:</label>
+                                    <textarea name="queueArray" class="form-control" rows="5">@queueArray</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Enter" class="btn btn-success" />
+                                    </div>
+
+                                </div>
+
+                            }
+                            <table class="table card-table  table-vcenter text-nowrap mb-0">
+                                @if (data1 != null)
+                                {
+                                    <tbody>
+                                        @while(!data1.IsEmpty())
+                                        {
+                                            <tr>
+                                                <td>@data1.Dequeue()</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                }
+                            </table>
+                        </div>
+                        <div class="flex-1 mg-b-20 bd bd-2 bd-gray-200 rounded p-3 pd-b-0-f row mt-3">
+                            @using (Html.BeginForm("TestQueueArray", "Project3", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+
+                                @Html.AntiForgeryToken()
+                                <h6 class="title pd-b-2">
+                                    Matrix
+                                </h6>
+                                <div class="form-group row">
+                                    <label class="control-label">Enter the text to see how to work:</label>
+                                    <textarea name="circularQueue" class="form-control" rows="5">@circularQueue</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Enter" class="btn btn-success" />
+                                    </div>
+
+                                </div>
+
+                            }
+                            <table class="table card-table  table-vcenter text-nowrap mb-0">
+                                @if (data2 != null)
+                                {
+                                    <tbody>
+                                        @while (!data2.IsEmpty())
+                                        {
+                                            <tr>
+                                                <td>@data2.Dequeue()</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                }
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

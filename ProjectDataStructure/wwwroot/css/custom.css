@@ -1,0 +1,69 @@
+﻿body {
+}
+
+.side-menu .side-menu__item .side-menu__icon1 {
+    font-size: 18px;
+    margin-right: 14px;
+    width: 28px;
+    height: 25px;
+    border-radius: 3px;
+    text-align: center;
+    color: #424242;
+    fill: #5b6e88;
+    border: solid 2px #888;
+    background: #eee;
+    padding: 2px;
+}
+
+select.form-control {
+    -webkit-appearance: listbox;
+}
+
+select option {
+    font-size: 16px;
+}
+
+.table thead th, .table thead td {
+    font-size: 13px !important;
+}
+
+.check-box-list {
+}
+
+.check-box-list label {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.fa-stack:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.fa-stack .fa-ban {
+    opacity: .5;
+    color: lightgray;
+}
+
+.fa-stack .fa-filter {
+    opacity: .5;
+    color: gray;
+}
+
+.fa-stack.enable .fa-ban {
+    opacity: .5;
+    color: red;
+}
+
+.fa-stack.enable .fa-filter {
+    opacity: .5;
+    color: black;
+}
+
+.main-sidemenu .side-menu .slide .slide-item{
+    font-size:14px;
+}
+
+.main-sidemenu .side-menu .slide .sub-slide-item {
+    font-size: 14px;
+}

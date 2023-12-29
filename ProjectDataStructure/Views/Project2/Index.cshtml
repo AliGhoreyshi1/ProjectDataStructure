@@ -1,0 +1,104 @@
+﻿@using static ProjectDataStructure.Models.Project2Service;
+@{
+    ViewBag.Title = "Project 1";
+    string exampleMatrix = "1 0 3\n0 5 0\n7 0 0";
+    DataStructureArray data = null;
+    if (ViewBag.IdentityMatrix != null)
+    {
+        data = (DataStructureArray)ViewBag.IdentityMatrix;
+    }
+    if(ViewBag.Numdiscs != null)
+    {
+        exampleMatrix = (string)ViewBag.Numdiscs;
+    }
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                @if (TempData["ErrorMessage"] != null && !string.IsNullOrEmpty((string)TempData["ErrorMessage"]))
+                {
+
+                    <div class="alert alert-danger " role="alert">
+                        <strong>Error!</strong> @TempData["ErrorMessage"]
+                        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                }
+                <div class="form-horizontal">
+                    <div class="justify-content-between">
+                        <h4 class="title pd-b-2">
+                            Project 1
+                        </h4>
+                    </div>
+                    <div>
+                        <div class="flex-1 mg-b-20 bd bd-2 bd-gray-200 rounded p-3 pd-b-0-f row mt-3">
+                            @using (Html.BeginForm("Matrix", "Project2", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+
+                                @Html.AntiForgeryToken()
+                                <h6 class="title pd-b-2">
+                                    Matrix
+                                </h6>
+                                <div class="form-group row">
+                                    <label class="control-label">Enter the number:</label>
+                                    <textarea name="Numdiscs" class="form-control" rows="5">@exampleMatrix</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Enter" class="btn btn-success" />
+                                    </div>
+
+                                </div>
+
+                            }
+                            <table class="table card-table  table-vcenter text-nowrap mb-0">
+                                @if (data != null)
+                                {
+                                    <tbody>
+                                        @for (int i = 0; i < data.GetSize(); i++)
+                                        {
+                                            var k = data.FindWithId(i) as DataStructureArray;
+                                            if (k != null)
+                                            {
+                                                
+                                                    @for (int j = 0; j < k.GetSize(); j++)
+                                                    {
+                                                        var value = k.FindWithId(j);
+                                                        if(j == 0)
+                                                        {
+                                                            @:<tr>
+                                                        }
+                                                        else if(j > 2 && j % 3 == 0)
+                                                        {
+                                                            @:<tr>
+                                                        }
+                                                        <td>@value</td>
+                                                        if(j == 2)
+                                                        {
+                                                            @:</tr>
+                                                        }
+                                                        else if(j > 2 && j % 3 == 2)
+                                                        {
+                                                            @:</tr>
+                                                        }
+
+                                                    }
+                                                
+                                            }
+                                        }
+                                    </tbody>
+                                }
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
